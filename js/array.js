@@ -1,0 +1,80 @@
+const pasturas = [
+    {   especie: 'Ryegrass',
+        habito: 'Anual',
+        ciclo: 'Invernal',
+        siembra: 'Abril',
+        densidad: '20',
+        costo: '2,00'
+    },
+    {   especie: 'Avena',
+        habito: 'Anual',
+        ciclo: 'Invernal',
+        siembra: 'Marzo',
+        densidad: '90',
+        costo: '0,60'
+    },
+    {   especie: 'Achicoria',
+        habito: 'Anual',
+        ciclo: 'Invernal',
+        siembra: 'Marzo',
+        densidad: '5',
+        costo: '8,50'
+    },
+    {   especie: 'Sorgo',
+        habito: 'Anual',
+        ciclo: 'Estival',
+        siembra: 'Noviembre',
+        densidad: '15',
+        costo: '1,50'
+    },
+    {   especie: 'Sudangras',
+        habito: 'Anual',
+        ciclo: 'Estival',
+        siembra: 'Noviembre',
+        densidad: '18',
+        costo: '1,60'
+    },
+    {   especie: 'Moha',
+        habito: 'Anual',
+        ciclo: 'Estival',
+        siembra: 'Noviembre',
+        densidad: '15',
+        costo: '1,05'
+    },
+    {   especie: 'Ryegrass Perenne',
+        habito: 'Perenne',
+        ciclo: 'Invernal',
+        siembra: 'Abril',
+        densidad: '15',
+        costo: '2,50'
+    },
+    {   especie: 'Festuca',
+        habito: 'Perenne',
+        ciclo: 'Invernal',
+        siembra: 'Marzo',
+        densidad: '12',
+        costo: '2,70'
+    },
+    {   especie: 'Dactylis',
+        habito: 'Perenne',
+        ciclo: 'Invernal',
+        siembra: 'Marzo',
+        densidad: '10',
+        costo: '3,00'
+    },
+    {   especie: 'Trebol Blanco',
+        habito: 'Perenne',
+        ciclo: 'Invernal',
+        siembra: 'Marzo',
+        densidad: '2',
+        costo: '8,50'
+    },
+    {   especie: 'Lotus Corniculatus',
+        habito: 'Perenne',
+        ciclo: 'Invernal',
+        siembra: 'Marzo',
+        densidad: '5',
+        costo: '8,00'
+    }
+
+]
