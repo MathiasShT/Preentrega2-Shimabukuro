@@ -1,51 +1,59 @@
-// console.table (pasturas);
+console.table(pasturas);
 
-let habito = document.getElementById("habito");
-let ciclo = document.getElementById("ciclo");
+let habito = document.getElementById('habito');
+let ciclo = document.getElementById('ciclo');
 let boton = document.querySelector('button');
 
+function mostrarPasturas(pasturas){
+  pasturas.forEach(
+    (pastura) => console.log(
+      'Opciones de pasturas ' + pastura.habito + '/' + pastura.ciclo + '---' +
+        pastura.especie + ' - Habito de vida = ' + 
+        pastura.habito + ' - Ciclo de produccion = ' + 
+        pastura.ciclo + ' - Fecha de siembra optima = ' + 
+        pastura.siembra + ' - Densidad recomendada = ' + 
+        pastura.densidad + ' Kg/hectarea ' + ' - a un costo de = ' + 
+        pastura.costo + 'U$S/Kg.'
+    )
+  )
+};
 
+function loadPage() {
+    console.log("habito", habito.value);
+    console.log("ciclo", ciclo.value);
+    let h = habito.value;
+    let c = ciclo.value;
+    if (h == "Anual" && c == "Invernal") {
+      return navigateTo("invernales");
+    } else if (h == "Anual" && c == "Estival"){
+      return navigateTo("estivales");
+    } else if (h == "Perenne" && c == "Invernal"){
+        return navigateTo("perennes");
+      }
+    else {
+      alert("nada seleccionado o opcion desconocida");
+    }
+  }
+  
+  function navigateTo(pageName) {
+    window.location.href = './pages/' + pageName.toLowerCase() + '.html';
+  };
+  
 
-// if (habito=='Anual' && ciclo=='Invernal'){
+function filtrarPasturas() {
+  let resultado = pasturas.filter(filtrarHabito).filter(filtrarCiclo);
+  if (resultado.length > 0) {
+    mostrarPasturas(resultado)
+  }
+  return resultado
+};
 
-// } else (habito=='Anual' && ciclo=='Estival'){
+function filtrarHabito(pastura){
+  return pastura.habito === habito.value;
+};
 
-// } else (habito=='Perenne' && ciclo=='Invernal'){
+function filtrarCiclo(pastura){
+  return pastura.ciclo === ciclo.value;
+};
 
-// } else (habito=='Perenne' && ciclo=='Estival'){
-//     alert('No disponemos de especies Perennes estivales')
-// };
-
-// function anualesInvernales(){
-
-// }
-// function mostrarPasturas(pasturas){
-//     pasturas.forEach((pastura)=> console.log(
-//         'Opciones de pasturas ' + pastura.habito + '/' + pastura.ciclo + '---' +
-//         pastura.especie + ' - Habito de vida = ' + 
-//         pastura.habito + ' - Ciclo de produccion = ' + 
-//         pastura.ciclo + ' - Fecha de siembra optima = ' + 
-//         pastura.siembra + ' - Densidad recomendada = ' + 
-//         pastura.densidad + ' Kg/hectarea ' + ' - a un costo de = ' + 
-//         pastura.costo + 'U$S/Kg.'
-//     ))};
-
-// function filtrarPasturas()
-// {   const resultado = pasturas
-//     .filter(filtrarHabito)
-//     .filter(filtrarCiclo);
-//     if (resultado.length>0){mostrarPasturas(resultado)}
-//     else { alert ("No hay pasturas perennes estivales")} };
-
-// function filtrarHabito(pastura){
-//     if(habito){
-//         return pastura.habito === habito;
-//     }   return pastura
-// };
-// function filtrarCiclo(pastura){
-//     if(ciclo){
-//         return pastura.ciclo === ciclo;
-//     }   return pastura
-// };
-
-// boton.addEventListener('click' , filtrarPasturas);
+boton.addEventListener('click' , loadPage);

@@ -15,19 +15,19 @@
 
 <body>
 
-  <form>
-    <select onchange="cambioHabito(this.value)" class="form-select" id="habito" aria-label="Default select example">
-      <option selected>Habito de vida</option>
-      <option value="1">Anual</option>
-      <option value="2">Perenne</option>
+  <form method="dialog">
+    <select id="habito" class="form-select" aria-label="Default select example">
+      <option value="" selected>Habito de vida</option>
+      <option value="Anual">Anual</option>
+      <option value="Perenne">Perenne</option>
     </select>
-    <select onchange="cambioCiclo(this.value)" class="form-select" id="ciclo" aria-label="Default select example">
-      <option selected>Ciclo de produccion</option>
-      <option value="1">Invernal</option>
-      <option value="2">Estival</option>
+    <select id="ciclo" class="form-select" aria-label="Default select example">
+      <option value="" selected>Ciclo de produccion</option>
+      <option value="Invernal">Invernal</option>
+      <option value="Estival">Estival</option>
     </select>
     <div class="col-12">
-      <button class="btn btn-primary" type="submit">Consultar</button>
+      <button class="btn btn-primary">Consultar</button>
     </div>
   </form>
 
