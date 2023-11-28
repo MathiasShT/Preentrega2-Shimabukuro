@@ -4,7 +4,7 @@ let habito = document.getElementById('habito');
 let ciclo = document.getElementById('ciclo');
 let boton = document.querySelector('button');
 
-function mostrarPasturas(pasturas){
+/*function mostrarPasturas(pasturas){
   pasturas.forEach(
     (pastura) => console.log(
       'Opciones de pasturas ' + pastura.habito + '/' + pastura.ciclo + '---' +
@@ -16,7 +16,7 @@ function mostrarPasturas(pasturas){
         pastura.costo + 'U$S/Kg.'
     )
   )
-};
+};*/
 
 function loadPage() {
     console.log("habito", habito.value);
@@ -40,7 +40,7 @@ function loadPage() {
   };
   
 
-function filtrarPasturas() {
+/*function filtrarPasturas() {
   let resultado = pasturas.filter(filtrarHabito).filter(filtrarCiclo);
   if (resultado.length > 0) {
     mostrarPasturas(resultado)
@@ -54,6 +54,6 @@ function filtrarHabito(pastura){
 
 function filtrarCiclo(pastura){
   return pastura.ciclo === ciclo.value;
-};
+};*/
 
 boton.addEventListener('click' , loadPage);
