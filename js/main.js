@@ -24,13 +24,18 @@ function loadPage() {
     window.location.href = './pages/' + pageName.toLowerCase() + '.html';
   };
 
+if (boton !== null) {
+  console.log("addEventListener boton");
+}
  boton.addEventListener('click' , loadPage);
 
- const guardarConsulta = document.querySelector('consultar');
-
  function consultar(){
-  localStorage.setItem("Pastura" , JSON.stringify(card-title))
+  console.log("consultar localStorage");
+  localStorage.setItem("Pastura" , JSON.stringify('card-title'))
  };
 
- guardarConsulta.addEventListener('click' , consultar);
- 
+ let guardarConsulta = document.querySelector('.consultar');
+ if (guardarConsulta !== null) {
+  console.log("addEventListener consultar");
+  guardarConsulta.addEventListener('click' , consultar);
+ };
