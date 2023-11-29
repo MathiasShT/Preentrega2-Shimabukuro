@@ -22,4 +22,12 @@ body{
     gap: 10px;
 }
 
+.card-img-top{
+    height: 200px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+}
+
 
