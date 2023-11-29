@@ -26,16 +26,15 @@ function loadPage() {
 
 if (boton !== null) {
   console.log("addEventListener boton");
-}
- boton.addEventListener('click' , loadPage);
 
- function consultar(){
-  console.log("consultar localStorage");
-  localStorage.setItem("Pastura" , JSON.stringify('card-title'))
- };
+ boton.addEventListener('click' , loadPage)};
 
- let guardarConsulta = document.querySelector('.consultar');
- if (guardarConsulta !== null) {
-  console.log("addEventListener consultar");
-  guardarConsulta.addEventListener('click' , consultar);
- };
+const pastura = document.querySelector('.articulos');
+console.log(pastura);
+
+function consultar() {
+  localStorage.setItem("Pastura" , JSON.stringify(pastura))
+};
+let guardarConsulta = document.querySelector('.consultar');
+
+guardarConsulta.addEventListener('click' , consultar);
