@@ -1,26 +1,11 @@
-console.table(pasturas);
 
 let habito = document.getElementById('habito');
 let ciclo = document.getElementById('ciclo');
 let boton = document.querySelector('button');
 
-/*function mostrarPasturas(pasturas){
-  pasturas.forEach(
-    (pastura) => console.log(
-      'Opciones de pasturas ' + pastura.habito + '/' + pastura.ciclo + '---' +
-        pastura.especie + ' - Habito de vida = ' + 
-        pastura.habito + ' - Ciclo de produccion = ' + 
-        pastura.ciclo + ' - Fecha de siembra optima = ' + 
-        pastura.siembra + ' - Densidad recomendada = ' + 
-        pastura.densidad + ' Kg/hectarea ' + ' - a un costo de = ' + 
-        pastura.costo + 'U$S/Kg.'
-    )
-  )
-};*/
-
 function loadPage() {
-    console.log("habito", habito.value);
-    console.log("ciclo", ciclo.value);
+    //console.log("habito", habito.value);
+    //console.log("ciclo", ciclo.value);
     let h = habito.value;
     let c = ciclo.value;
     if (h == "Anual" && c == "Invernal") {
@@ -31,29 +16,21 @@ function loadPage() {
         return navigateTo("perennes");
       }
     else {
-      alert("nada seleccionado o opcion desconocida");
+      alert("Especies no disponibles por el momento");
     }
   }
   
   function navigateTo(pageName) {
     window.location.href = './pages/' + pageName.toLowerCase() + '.html';
   };
-  
 
-/*function filtrarPasturas() {
-  let resultado = pasturas.filter(filtrarHabito).filter(filtrarCiclo);
-  if (resultado.length > 0) {
-    mostrarPasturas(resultado)
-  }
-  return resultado
-};
+ boton.addEventListener('click' , loadPage);
 
-function filtrarHabito(pastura){
-  return pastura.habito === habito.value;
-};
+ const guardarConsulta = document.querySelector('consultar');
 
-function filtrarCiclo(pastura){
-  return pastura.ciclo === ciclo.value;
-};*/
+ function consultar(){
+  localStorage.setItem("Pastura" , JSON.stringify(card-title))
+ };
 
-boton.addEventListener('click' , loadPage);
+ guardarConsulta.addEventListener('click' , consultar);
+ 
