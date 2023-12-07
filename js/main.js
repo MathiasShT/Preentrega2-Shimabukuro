@@ -1,40 +1,61 @@
+let consultas = [];
 
-let habito = document.getElementById('habito');
-let ciclo = document.getElementById('ciclo');
-let boton = document.querySelector('button');
+const tarjetas = document.querySelector('.tarjetas');
+const listaConsultas = document.querySelector('#listas tbody');
+const eliminarConsulta = document.querySelector('.limpiar');
 
-function loadPage() {
-    //console.log("habito", habito.value);
-    //console.log("ciclo", ciclo.value);
-    let h = habito.value;
-    let c = ciclo.value;
-    if (h == "Anual" && c == "Invernal") {
-      return navigateTo("invernales");
-    } else if (h == "Anual" && c == "Estival"){
-      return navigateTo("estivales");
-    } else if (h == "Perenne" && c == "Invernal"){
-        return navigateTo("perennes");
-      }
-    else {
-      alert("Especies no disponibles por el momento");
-    }
+function consultar(evt) {
+  evt.preventDefault();
+    if (evt.target.classList.contains('consultar')) {
+        const producto = evt.target.parentElement.parentElement;
+    leerDatosProducto(producto);
   }
-  
-  function navigateTo(pageName) {
-    window.location.href = './pages/' + pageName.toLowerCase() + '.html';
-  };
-
-if (boton !== null) {
-  console.log("addEventListener boton");
-
- boton.addEventListener('click' , loadPage)};
-
-const pastura = document.querySelector('.articulos');
-console.log(pastura);
-
-function consultar() {
-  localStorage.setItem("Pastura" , JSON.stringify(pastura))
 };
-let guardarConsulta = document.querySelector('.consultar');
 
-guardarConsulta.addEventListener('click' , consultar);
+function leerDatosProducto(item) {
+    const infoProducto = {
+    imagen: item.querySelector('img').src,
+    nombre: item.querySelector('h5').textContent,
+    precio: item.querySelector('p').textContent,
+  };
+    consultas.push(infoProducto);
+  agregarConsultasHtml();
+};
+
+
+
+function agregarConsultasHtml() {
+  limpiarConsultas();
+  consultas.forEach((producto) => {
+    const fila = document.createElement('tr');
+    fila.innerHTML = `
+      <td><img src="${producto.imagen}" width="50"/></td>
+      <td> ${producto.nombre}</td>
+      <td> ${producto.precio}</td>
+    `;
+    listaConsultas.appendChild(fila);
+  })
+  agregarStorage();
+};
+
+function limpiarConsultas() {
+  while (listaConsultas.firstChild) {
+    listaConsultas.removeChild(listaConsultas.firstChild)
+  }
+};
+
+function eliminarConsultas() {
+  while (listaConsultas.firstChild) {
+    listaConsultas.removeChild(listaConsultas.firstChild)
+  }
+  consultas = [];
+  agregarStorage();
+};
+
+function agregarStorage() {
+  localStorage.setItem('buzon', JSON.stringify(consultas))
+};
+
+
+tarjetas.addEventListener('click', consultar);
+eliminarConsulta.addEventListener('click', eliminarConsultas)

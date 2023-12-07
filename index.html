@@ -2,41 +2,233 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pasturas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="./js/main.js" defer></script>
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pasturas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="./js/array.js" defer></script>
+  <script src="./js/main.js" defer></script>
+
 
 </head>
 
-<body>
+<body id="principal">
 
-  <form class="info" method="dialog">
-    <select id="habito" class="form-select" aria-label="Default select example">
-      <option value="" selected>Habito de vida</option>
-      <option value="Anual">Anual</option>
-      <option value="Perenne">Perenne</option>
-    </select>
-    <select id="ciclo" class="form-select" aria-label="Default select example">
-      <option value="" selected>Ciclo de produccion</option>
-      <option value="Invernal">Invernal</option>
-      <option value="Estival">Estival</option>
-    </select>
-    <div class="col-12">
-      <button id="boton" class="btn btn-primary">Consultar</button>
-    </div>
-  </form>
+  <header>
+    <nav class="navbar-expand-lg sticky-top bg-body-tertiary">
+      <section class="container-fluid">
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Consultas
+          </a>
+          <div class="lista-consultas">
+            <table id="listas" class="dropdown-menu">
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <a class="enviar" href="#">Enviar</a>
+            <a class="limpiar" href="#">Limpiar</a>
+          </div>
+        </div>
+      </section>
+    </nav>
+  </header>
+
+  <main class="tarjetas">
+
+    <section class="row">
+      <article class="card col-xxl-3 col-xl-3 col-md-4 col-sm-12" style="width: 18rem;">
+        <img src="../img/ryegrass.webp" class="card-img-top" alt="Ryegrass>
+      <div class=" card-body">
+        <h5 class="articulos card-title">Ryegrass</h5>
+        <p class="card-text">2,00 U$S/Kg.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item-1">Anual</li>
+          <li class="list-group-item-2">Invernal</li>
+          <li class="list-group-item-3">20KG/Ha.</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link consultar">Consultar</a>
+        </div>
+      </article>
+
+      <article class="card col-xxl-3 col-xl-3 col-md-4 col-sm-12" style="width: 18rem;">
+        <img src="../img/avena.webp" class="card-img-top" alt="Avena">
+        <div class="card-body">
+          <h5 class="articulos card-title">Avena</h5>
+          <p class="card-text">0,60 U$S/Kg.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item-1">Anual</li>
+          <li class="list-group-item-2">Invernal</li>
+          <li class="list-group-item-3">90 KG/Ha.</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link consultar">Consultar</a>
+        </div>
+      </article>
+
+      <article class="card col-xxl-3 col-xl-3 col-md-4 col-sm-12" style="width: 18rem;">
+        <img src="../img/achicoria.webp" class="card-img-top" alt="Achicoria">
+        <div class="card-body">
+          <h5 class="articulos card-title">Achicoria</h5>
+          <p class="card-text">8,50 U$S/Kg.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item-1">Anual</li>
+          <li class="list-group-item-2">Invernal</li>
+          <li class="list-group-item-3">5 KG/Ha.</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link consultar">Consultar</a>
+        </div>
+      </article>
+
+      <article class="card col-xxl-3 col-xl-3 col-md-4 col-sm-12" style="width: 18rem;">
+        <img src="../img/sorgo.webp" class="card-img-top" alt="Sorgo">
+        <div class="card-body">
+          <h5 class="articulos card-title">Sorgo</h5>
+          <p class="card-text">1,50 U$S/Kg.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item-1">Anual</li>
+          <li class="list-group-item-2">Estival</li>
+          <li class="list-group-item-3">15 Kg/Ha.</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link consultar">Consultar</a>
+        </div>
+      </article>
+
+      <article class="card col-xxl-3 col-xl-3 col-md-4 col-sm-12" style="width: 18rem;">
+        <img src="../img/Sudangras.webp" class="card-img-top" alt="Sudangras">
+        <div class="card-body">
+          <h5 class="articulos card-title">Sudangras</h5>
+          <p class="card-text">1,60 U$S/Kg.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item-1">Anual</li>
+          <li class="list-group-item-2">Estival</li>
+          <li class="list-group-item-3">18 Kg/Ha.</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link consultar">Consultar</a>
+        </div>
+      </article>
+
+      <article class="card col-xxl-3 col-xl-3 col-md-4 col-sm-12" style="width: 18rem;">
+        <img src="../img/Moha.webp" class="card-img-top" alt="Moha">
+        <div class="card-body">
+          <h5 class="articulos card-title">Moha</h5>
+          <p class="card-text">1,05 U$S/Kg.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item-1">Anual</li>
+          <li class="list-group-item-2">Estival</li>
+          <li class="list-group-item-3">15 Kg/Ha.</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link consultar">Consultar</a>
+        </div>
+      </article>
+
+      <article class="card col-xxl-3 col-xl-3 col-md-4 col-sm-12" style="width: 18rem;">
+        <img src="../img/ryegrass.webp" class="card-img-top" alt="Ryegrass">
+        <div class="card-body">
+          <h5 class="articulos card-title">Ryegrass perenne</h5>
+          <p class="card-text">2,50 U$S/Kg.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item-1">Perenne</li>
+          <li class="list-group-item-2">Invernal</li>
+          <li class="list-group-item-3">15 Kg/Ha.</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link consultar">Consultar</a>
+        </div>
+      </article>
+
+      <article class="card col-xxl-3 col-xl-3 col-md-4 col-sm-12" style="width: 18rem;">
+        <img src="../img/Festuca.webp" class="card-img-top" alt="Festuca">
+        <div class="card-body">
+          <h5 class="articulos card-title">Festuca</h5>
+          <p class="card-text">2,70 U$S/Kg.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item-1">Perenne</li>
+          <li class="list-group-item-2">Invernal</li>
+          <li class="list-group-item-3">12 Kg/Ha.</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link consultar">Consultar</a>
+        </div>
+      </article>
+
+      <article class="card col-xxl-3 col-xl-3 col-md-4 col-sm-12" style="width: 18rem;">
+        <img src="../img/dactylis.webp" class="card-img-top" alt="Dactylis">
+        <div class="card-body">
+          <h5 class="articulos card-title">Dactylis</h5>
+          <p class="card-text">3,00 U$S/Kg.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item-1">Perenne</li>
+          <li class="list-group-item-2">Invernal</li>
+          <li class="list-group-item-3">10 Kg/Ha.</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link consultar">Consultar</a>
+        </div>
+      </article>
+
+      <article class="card col-xxl-3 col-xl-3 col-md-4 col-sm-12" style="width: 18rem;">
+        <img src="../img/TB.webp" class="card-img-top" alt="Trebol Blanco">
+        <div class="card-body">
+          <h5 class="articulos card-title">Trebol Blanco</h5>
+          <p class="card-text">8,50 U$S/Kg.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item-1">Perenne</li>
+          <li class="list-group-item-2">Invernal</li>
+          <li class="list-group-item-3"> 2 Kg/Ha.</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link consultar">Consultar</a>
+        </div>
+      </article>
+
+      <article class="card col-xxl-3 col-xl-3 col-md-4 col-sm-12" style="width: 18rem;">
+        <img src="../img/LC.jpg" class="card-img-top" alt="Lotus Corniculatus">
+        <div class="card-body">
+          <h5 class="articulos card-title">Lotus Corniculatus</h5>
+          <p class="card-text">8,50 U$S/Kg.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item-1">Perenne</li>
+          <li class="list-group-item-2">Invernal</li>
+          <li class="list-group-item-3">5 Kg/Ha.</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link consultar">Consultar</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-
-        
 </body>
 
 </html>

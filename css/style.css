@@ -1,9 +1,16 @@
+.consultas{
+    margin-right: auto;
+    margin-left: auto;
+}
+
 body{
     background-image: url(../img/Pradera2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 .info{
@@ -12,7 +19,7 @@ body{
     margin-top: 50px;
 }
 
-.tarjetas{
+section{
     display: flex;
     justify-content: center;
     align-content: center;
