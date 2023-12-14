@@ -49,7 +49,6 @@ function eliminarConsultas() {
     listaConsultas.removeChild(listaConsultas.firstChild);
     Swal.fire({
       title: "Deseas eliminar las consultas?",
-      text: "No se puede deshacer!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
